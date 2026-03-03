@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 
-const SECTIONS = ["hero", "about", "product", "encoder", "connectivity", "contact"];
+const SECTIONS = ["hero", "about", "encoder", "product", "connectivity", "contact"];
 
 const useInView = (threshold = 0.15) => {
   const ref = useRef(null);
@@ -94,8 +94,8 @@ const Nav = ({ active }) => {
   }, []);
   const links = [
     { id: "about", label: "About" },
-    { id: "product", label: "RamPack Shell" },
     { id: "encoder", label: "RamPack Pro" },
+    { id: "product", label: "RamPack Shell" },
     { id: "connectivity", label: "Connectivity" },
     { id: "contact", label: "Contact" },
   ];
@@ -212,18 +212,18 @@ const Hero = () => (
       </FadeIn>
       <FadeIn delay={0.4}>
         <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-          <a href="#product" style={{
+          <a href="#encoder" style={{
             background: `linear-gradient(135deg, ${C.accent}, ${C.accentDark})`,
             color: C.bg, padding: "16px 40px", borderRadius: 12,
             fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 15,
             textDecoration: "none", boxShadow: "0 0 40px rgba(0,194,255,0.25)",
-          }}>Explore RamPack Shell</a>
-          <a href="#encoder" style={{
+          }}>RamPack Pro Encoder</a>
+          <a href="#product" style={{
             background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.12)",
             color: "#fff", padding: "16px 40px", borderRadius: 12,
             fontFamily: "'Outfit', sans-serif", fontWeight: 600, fontSize: 15,
             textDecoration: "none",
-          }}>RamPack Pro Encoder</a>
+          }}>Explore RamPack Shell</a>
         </div>
       </FadeIn>
       <FadeIn delay={0.55}>
@@ -624,7 +624,7 @@ const Footer = () => (
         </div>
         <div style={{ display: "flex", gap: 48 }}>
           {[
-            { title: "Products", links: ["RamPack Shell", "RamPack Pro Encoder", "Starlink Pouch"] },
+            { title: "Products", links: ["RamPack Pro Encoder", "RamPack Shell", "Starlink Pouch"] },
             { title: "Company", links: ["About", "Connectivity", "Roadmap", "Contact"] },
           ].map((col, i) => (
             <div key={i}>
@@ -677,8 +677,8 @@ export default function FieldLinkWebsite() {
       <Nav active={active} />
       <Hero />
       <About />
-      <Product />
       <Encoder />
+      <Product />
       <Connectivity />
       <Contact />
       <Footer />
